@@ -1,0 +1,272 @@
+/* h1 {
+    font-family: 'GT America';  
+    font-weight: 300;
+    font-stretch: 125%; 
+    color: red;
+    font-size: 150px;
+} */
+
+html {font-size: calc(1vw / 15.12)}
+
+body {
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#img-splash-container {
+    width: 80vw;
+    height: 100vh;
+    /* background: red; */
+    background: url(../images/back.jpg) no-repeat;
+    background-size: contain;
+    margin-left: 25vw;
+    position: absolute;
+    z-index: 0;
+}
+
+#content-wrapper {
+    width: auto;
+    height: auto;
+    margin-left: 15vw;
+    z-index: 2;
+
+}
+
+form > p {
+    margin: 0;
+}
+
+#text-container {
+    width: 85vw;
+    height: auto;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+#splash-logo {
+    width: 22vw;
+}
+
+p {
+    font-size: 18rem;
+    color: white;
+    font-family: 'GT America';
+    font-weight: 200;
+    font-stretch: 125%;  
+    margin-bottom: 28rem;  
+    line-height: 125%;
+}
+
+#splash-text {
+    width: 35vw;
+    height: auto;
+}
+
+#my-form {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 145rem;
+    /* margin: 0; */
+}
+
+/* Inputs — базовый стиль + состояния (вписано в текущую стилистику) */
+input {
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40rem;
+    padding: 0 20rem;
+    color: #fff;
+    background-color: #000;
+    border-radius: 20rem;
+    font-family: 'GT America';
+    font-weight: 200;
+    font-stretch: 150%;
+    font-size: 18rem;
+    line-height: 36rem;
+    caret-color: #ffffff; /* белый курсор на чёрном фоне */
+    cursor: text;
+}
+
+/* #my-form-status {
+    font-size: 12px;
+} */
+
+/* Placeholder — серый, почти пропадает при вводе (задаётся через placeholder атрибут) */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.24);
+    opacity: 1;
+}
+input:focus::placeholder {
+    opacity: 0.5;
+    transition: opacity .15s ease;
+}
+input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.24); }
+input::-moz-placeholder { color: rgba(255,255,255,.24); }
+input:-ms-input-placeholder { color: rgba(255,255,255,.24); }
+input::-ms-input-placeholder { color: rgba(255,255,255,.24); }
+
+/* hover */
+input:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: #0a0a0a;
+}
+
+input:focus {
+    outline: none;
+    background-color: #000000;
+}
+
+/* Filled — когда поле не пустое */
+input:not(:placeholder-shown) {
+    border-color: rgba(255, 255, 255, 0.25);
+    background-color: #000000;
+}
+
+/* Disabled */
+input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#my-form-button {
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 40%;
+    align-self: flex-end;
+    height: 40rem;
+    padding: 0 24rem;
+    background-color: #EF403B;
+    color: #fff;
+    border-radius: 20rem;
+    font-family: 'GT America';
+    font-weight: 200;
+    font-stretch: 150%;
+    font-size: 18rem;
+    line-height: 36rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .2s ease, box-shadow .2s ease, transform .02s ease;
+}
+
+#rext-form-wrapper {
+    position: relative;
+}
+
+#tg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 54rem;
+}
+
+/* telegram icon hover wiggle */
+#tg img {
+    display: block;
+    transform-origin: 50% 50%;
+    will-change: transform;
+    width: 40rem;
+}
+
+#tg:hover img {
+    animation: tg-wiggle 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes tg-wiggle {
+    from { transform: rotate(-5deg); }
+    to   { transform: rotate(5deg); }
+}
+
+#my-form-button:hover {
+    background-color: #D93A36;
+}
+
+#my-form-button:active {
+    background-color: #C23431;
+    transform: translateY(1rem);
+}
+
+#my-form-button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4rem rgba(239, 64, 59, 0.35);
+}
+
+/* отправка */
+#my-form-button:disabled,
+#my-form-button[aria-busy="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+nav {
+    width: 100vw;
+    box-sizing: border-box;
+    height: 80rem;
+    padding: 20rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+
+#nav-wrapper {
+    width: auto;
+    height: 40rem;
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 20px;
+
+}
+
+#nav-wrapper button {
+    all: unset;
+    text-decoration: none;
+    box-sizing: border-box;
+    height: 40rem;
+    padding: 20rem 40rem 20rem 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'GT America';
+    font-weight: 200;
+    font-stretch: 150%;
+    font-size: 18rem;
+    background-color: #000;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* прозрачные неактивные, перекрывая #nav-wrapper button */
+#nav-wrapper button.button-nav-unset {
+    background-color: transparent;
+}
+
+/* прозрачность при взаимодействиях */
+#nav-wrapper button.button-nav-unset:hover,
+#nav-wrapper button.button-nav-unset:active,
+#nav-wrapper button.button-nav-unset:focus-visible {
+    background-color: transparent;
+}

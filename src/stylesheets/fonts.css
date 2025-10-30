@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'GT America';
+    src: url(../fonts/GT-America-Intl-VF_0.woff2), 
+         url(../fonts/GT-America-Intl-VF_0.ttf);
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'GT America';
+    src: url(../fonts/GT-America-Intl-VF-Italic-VF.woff2),
+         url(../fonts/GT-America-Intl-VF-Italic-VF.ttf);
+    font-style: italic;
+
+
+}

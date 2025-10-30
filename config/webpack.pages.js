@@ -14,6 +14,7 @@ const htmlPages = [
   createPages('./src/pages/glossary.html', './pages/glossary.html'),
   createPages('./src/pages/tests.html', './pages/tests.html'),
   createPages('./src/pages/timeline.html', './pages/timeline.html'),
+  createPages('./src/pages/about.html', './pages/about.html'),
 
   createPages(
     './src/pages/tests/whatrapperareyou.html',
