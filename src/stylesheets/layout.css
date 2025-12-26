@@ -6,268 +6,260 @@
     font-size: 150px;
 } */
 
-html {font-size: calc(1vw / 15.12)}
+:root {
+  /* MEASURES */
+
+  --max-width: min(90vw, 1000px);
+  --ll-bleed: max(0px, calc((100vw - var(--max-width)) / 2));
+
+  --space: clamp(4px, 0.5vw, 12px);
+  --radius: clamp(10px, 1.8vw, 24px); /* Контейнерные размеры */
+
+  --radius-max: 999px; /* Контейнерные размеры */
+  --side-padding: clamp(16px, 4vw, 48px);
+  --ll-average-gap: clamp(10px, 1.38vw, 20px);
+
+  --p-max-width: 35vw;
+  --p-gap: clamp(12px, 1.5vw, 20px);
+
+  /* TYPO */
+
+  --text-color-white: #ffffff;
+
+  --label: 14px;
+  --text-2: 16px;
+
+  --text-1: clamp(16px, calc(12.818px + 0.682vw), 20px);
+
+  --subheading: clamp(18px, calc(9.455px + 2.045vw), 24px);
+
+  --heading-3: clamp(24px, calc(18.182px + 1.818vw), 32px);
+
+  --heading-2: clamp(24px, calc(15.273px + 2.727vw), 48px);
+
+  --heading-1: clamp(30px, calc(17.636px + 3.864vw), 64px);
+}
+
+* {
+  font-style: normal;
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
+}
+
+button {
+  all: unset;
+  color: inherit;
+}
 
 body {
-    background: black;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background: black;
+  color: var(--text-color-white);
+  position: relative;
+  overflow-x: hidden;
 }
 
-#img-splash-container {
-    width: 80vw;
-    height: 100vh;
-    /* background: red; */
-    background: url(../images/back.jpg) no-repeat;
-    background-size: contain;
-    margin-left: 25vw;
-    position: absolute;
-    z-index: 0;
+main {
+  width: var(--max-width);
+  margin-inline: auto;
 }
 
-#content-wrapper {
-    width: auto;
-    height: auto;
-    margin-left: 15vw;
-    z-index: 2;
-
+h1 {
+  font-size: var(--heading-1);
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
 }
 
-form > p {
-    margin: 0;
+h2 {
+  font-size: var(--heading-2);
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
 }
 
-#text-container {
-    width: 85vw;
-    height: auto;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.3) 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(1px);
+h3 {
+  font-size: var(--heading-3);
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
 }
 
-#splash-logo {
-    width: 22vw;
+h4 {
+  font-size: var(--subheading);
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
 }
 
+article {
+  margin-bottom: calc(var(--side-padding) * 2);
+  position: relative;
+}
 
 p {
-    font-size: 18rem;
-    color: white;
-    font-family: 'GT America';
-    font-weight: 200;
-    font-stretch: 125%;  
-    margin-bottom: 28rem;  
-    line-height: 125%;
+  font-size: var(--subheading);
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
+  max-width: var(--p-max-width);
 }
 
-#splash-text {
-    width: 35vw;
-    height: auto;
+p + p {
+  margin-top: calc(var(--p-gap) * 2);
 }
 
-#my-form {
-    width: 35vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 145rem;
-    /* margin: 0; */
+p .text-2 {
+  font-size: var(--text-2);
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
+  max-width: var(--p-max-width);
 }
 
-/* Inputs — базовый стиль + состояния (вписано в текущую стилистику) */
-input {
-    all: unset;
-    box-sizing: border-box;
-    width: 100%;
-    height: 40rem;
-    padding: 0 20rem;
-    color: #fff;
-    background-color: #000;
-    border-radius: 20rem;
-    font-family: 'GT America';
-    font-weight: 200;
-    font-stretch: 150%;
-    font-size: 18rem;
-    line-height: 36rem;
-    caret-color: #ffffff; /* белый курсор на чёрном фоне */
-    cursor: text;
+p .label {
+  font-size: var(--label);
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
+  max-width: var(--p-max-width);
 }
 
-/* #my-form-status {
-    font-size: 12px;
-} */
-
-/* Placeholder — серый, почти пропадает при вводе (задаётся через placeholder атрибут) */
-input::placeholder {
-    color: rgba(255, 255, 255, 0.24);
-    opacity: 1;
-}
-input:focus::placeholder {
-    opacity: 0.5;
-    transition: opacity .15s ease;
-}
-input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.24); }
-input::-moz-placeholder { color: rgba(255,255,255,.24); }
-input:-ms-input-placeholder { color: rgba(255,255,255,.24); }
-input::-ms-input-placeholder { color: rgba(255,255,255,.24); }
-
-/* hover */
-input:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    background-color: #0a0a0a;
-}
-
-input:focus {
-    outline: none;
-    background-color: #000000;
-}
-
-/* Filled — когда поле не пустое */
-input:not(:placeholder-shown) {
-    border-color: rgba(255, 255, 255, 0.25);
-    background-color: #000000;
-}
-
-/* Disabled */
-input:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-#my-form-button {
-    all: unset;
-    box-sizing: border-box;
-    cursor: pointer;
-    width: 40%;
-    align-self: flex-end;
-    height: 40rem;
-    padding: 0 24rem;
-    background-color: #EF403B;
-    color: #fff;
-    border-radius: 20rem;
-    font-family: 'GT America';
-    font-weight: 200;
-    font-stretch: 150%;
-    font-size: 18rem;
-    line-height: 36rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color .2s ease, box-shadow .2s ease, transform .02s ease;
-}
-
-#rext-form-wrapper {
-    position: relative;
-}
-
-#tg {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 54rem;
-}
-
-/* telegram icon hover wiggle */
-#tg img {
-    display: block;
-    transform-origin: 50% 50%;
-    will-change: transform;
-    width: 40rem;
-}
-
-#tg:hover img {
-    animation: tg-wiggle 0.6s ease-in-out infinite alternate;
-}
-
-@keyframes tg-wiggle {
-    from { transform: rotate(-5deg); }
-    to   { transform: rotate(5deg); }
-}
-
-#my-form-button:hover {
-    background-color: #D93A36;
-}
-
-#my-form-button:active {
-    background-color: #C23431;
-    transform: translateY(1rem);
-}
-
-#my-form-button:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 4rem rgba(239, 64, 59, 0.35);
-}
-
-/* отправка */
-#my-form-button:disabled,
-#my-form-button[aria-busy="true"] {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
+/* ----- */
 
 nav {
-    width: 100vw;
-    box-sizing: border-box;
-    height: 80rem;
-    padding: 20rem;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    top: 0;
-    left: 0;
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--ll-average-gap) * 2);
+  z-index: 4;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(var(--ll-average-gap) * 1);
+  width: max-content;
+
+  font-size: var(--text-1);
+  color: white;
+  font-family: 'GT America';
+  font-weight: 200;
+  font-stretch: 125%;
+  line-height: 130%;
 }
 
-#nav-wrapper {
-    width: auto;
-    height: 40rem;
-    display: flex;
-    flex-direction: row;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(1px);
-    border-radius: 20px;
-
+.O_hero-block {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#nav-wrapper button {
-    all: unset;
-    text-decoration: none;
-    box-sizing: border-box;
-    height: 40rem;
-    padding: 20rem 40rem 20rem 40rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    color: #fff;
-    font-family: 'GT America';
-    font-weight: 200;
-    font-stretch: 150%;
-    font-size: 18rem;
-    background-color: #000;
+.O_hero-block::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/backs/effect.png') center / cover no-repeat;
+  z-index: 1;
+  pointer-events: none;
 }
 
-a{
-    text-decoration: none;
+.A_hero-block-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
 }
 
-/* прозрачные неактивные, перекрывая #nav-wrapper button */
-#nav-wrapper button.button-nav-unset {
-    background-color: transparent;
+.A_hero-block-cards {
+  position: absolute;
+  inset: 0;
+  width: 120vw;
+  transform: translateX(-10vw);
+  margin-top: calc(var(--space) * -7);
+  object-fit: contain;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* прозрачность при взаимодействиях */
-#nav-wrapper button.button-nav-unset:hover,
-#nav-wrapper button.button-nav-unset:active,
-#nav-wrapper button.button-nav-unset:focus-visible {
-    background-color: transparent;
+.M_hero-content {
+  position: absolute;
+  top: 70vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ll-average-gap);
+  text-align: center;
+  padding-inline: var(--side-padding);
+}
+
+.M_track-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.M_tracks {
+  margin-top: var(--p-gap);
+}
+
+.A_tracks-img {
+  height: auto;
+  margin-top: calc(var(--side-padding) * 1.3);
+  margin-bottom: calc(var(--side-padding) * 1.3);
+}
+
+.O_album-block {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--ll-average-gap);
+}
+
+.A_artist-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transform: translateX(calc(var(--ll-bleed) * -1));
+  height: auto;
+  margin-bottom: var(--p-gap);
+  z-index: -1;
+}
+
+.A_artist-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/backs/effect.png') center / cover no-repeat;
+  z-index: 1;
+  pointer-events: none;
+}
+.A_h1-with-gap {
+  margin-top: calc(var(--side-padding) * 10);
 }

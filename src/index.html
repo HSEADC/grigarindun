@@ -1,101 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
     <title>Dubside — медиа о зарубежном хип-хопе</title>
     <meta name="title" content="Dubside — медиа о зарубежном хип-хопе" />
-    <meta name="description" content="Медиа о зарубежном хип-хопе и смежных жарнах." />
+    <meta
+      name="description"
+      content="Медиа о зарубежном хип-хопе и смежных жарнах."
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hseadc.github.io/grigarindun/" />
     <meta property="og:title" content="Dubside — медиа о зарубежном хип-хопе" />
-    <meta property="og:description" content="Медиа о зарубежном хип-хопе и смежных жарнах." />
-    <meta property="og:image" content="https://raw.githubusercontent.com/HSEADC/grigarindun/refs/heads/gh-pages/src/images/meta/meta.png" />
+    <meta
+      property="og:description"
+      content="Медиа о зарубежном хип-хопе и смежных жарнах."
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/HSEADC/grigarindun/refs/heads/gh-pages/src/images/meta/meta.png"
+    />
 
     <!-- X (Twitter) -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://hseadc.github.io/grigarindun/" />
-    <meta property="twitter:title" content="Dubside — медиа о зарубежном хип-хопе" />
-    <meta property="twitter:description" content="Медиа о зарубежном хип-хопе и смежных жарнах." />
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/HSEADC/grigarindun/refs/heads/gh-pages/src/images/meta/meta.png" />
+    <meta
+      property="twitter:url"
+      content="https://hseadc.github.io/grigarindun/"
+    />
+    <meta
+      property="twitter:title"
+      content="Dubside — медиа о зарубежном хип-хопе"
+    />
+    <meta
+      property="twitter:description"
+      content="Медиа о зарубежном хип-хопе и смежных жарнах."
+    />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/HSEADC/grigarindun/refs/heads/gh-pages/src/images/meta/meta.png"
+    />
 
     <!-- Meta Tags Generated with https://metatags.io -->
-    
-</head>
-<body>
-    <div id="img-splash-container"></div>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button>гайд</button><button>материалы</button><button>тесты</button
+        ><button>о проекте</button>
+      </nav>
+    </header>
 
-    <nav>
-      <div id="nav-wrapper">
-        <a href="./index.html">
-          <button>контакты</button>
-        </a>
-        <a href="./pages/about.html">
-          <button class="button-nav-unset">о проекте</button>
-        </a>
+    <main>
+      <article class="O_hero-block">
+        <video
+          class="A_hero-block-bg"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+        >
+          <source src="./images/backs/video_for_main.mp4" type="video/mp4" />
+        </video>
+        <img class="A_hero-block-cards" src="./images/cards.png" alt="" />
+        <div class="M_hero-content">
+          <h1>dubside</h1>
+          <p>
+            медиа-платформа для изучения современной западной хип-хоп культуры и
+            смежных с ней жанров
+          </p>
         </div>
-    </nav>
-
-    <div id="content-wrapper">
-        <img src="./images/logo.png" alt="logo" id="splash-logo">
-    <div id="text-container">
-        <div id="rext-form-wrapper">
-            <div id="splash-text">
-                <p>— Медиа о зарубежной хоп-хоп кульутре.</p>
-                <p>Рассказываем о популярных современных артистах, музыке и индустрии.</p>
-                <p>Скоро здесь будет сайт и море контента, подписывайся на анонс и наши соцсети, чтобы ничего не пропустить.</p>
-                <p id="my-form-status"></p>
-            </div>
-            <!-- modify this form HTML and place wherever you want your form -->
-                    <form id="my-form" action="https://formspree.io/f/mblpyenr" method="POST">
-                    <!-- <label>email:</label> -->
-                    <input type="email" name="email" placeholder="email" autocomplete="email" inputmode="email" />
-                    <!-- <label>message:</label> -->
-                    <input type="text" name="message" placeholder="message" />
-                    <button id="my-form-button">submit</button>
-                    </form>
-
-                    <!-- Place this script at the end of the body tag -->
-                    <script>
-                    var form = document.getElementById("my-form");
-                    
-                    async function handleSubmit(event) {
-                        event.preventDefault();
-                        var status = document.getElementById("my-form-status");
-                        var data = new FormData(event.target);
-                        fetch(event.target.action, {
-                        method: form.method,
-                        body: data,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                        }).then(response => {
-                        if (response.ok) {
-                            status.innerHTML = "Thanks for your submission!";
-                            form.reset()
-                        } else {
-                            response.json().then(data => {
-                            if (Object.hasOwn(data, 'errors')) {
-                                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-                            } else {
-                                status.innerHTML = "Oops! There was a problem submitting your form"
-                            }
-                            })
-                        }
-                        }).catch(error => {
-                        status.innerHTML = "Oops! There was a problem submitting your form"
-                        });
-                    }
-                    form.addEventListener("submit", handleSubmit)
-                    </script>
-                <a href="https://t.me/inthehotflow" id="tg">
-                <img src="./images/tg.png" alt="tg">
-                </a>
+      </article>
+      <article>
+        <p>
+          Кто те люди, которых слушает и обсуждает твоё окружение? Что за
+          расфорщенные зарубежные песни играют вокруг?
+        </p>
+        <p>
+          Если совсем не знаешь с чего начинать вкатываться, то прочитай наш
+          велком гайд.
+        </p>
+        <p>
+          В этом гайде мы собрали лучших хип-хоперов и их ключевые треки. Можешь
+          сразу прочитать весь гайд или постепенно входить в мир хип-хопа,
+          возвращаясь сюда.
+        </p>
+      </article>
+      <article class="O_artist-block-left">
+        <!-- nav -->
+        <h1 class="A_h1-with-gap">Kendrick Lamar</h1>
+        <p>
+          Кендрик — ультра база (и мейнстрим) в хип-хопе, пропустить его
+          невозможно.
+        </p>
+        <p>
+          В треках он рассуждает о тяжелых для общества социально значимых
+          темах.Это во многом выделяет его из большинства артистов современной
+          зарубежной хип-хоп сцены.
+        </p>
+        <img class="A_tracks-img" src="./images/tracks.png" alt="tracks-img" />
+        <div class="O_album-block">
+          <div class="O_album-block-text">
+            <p>
+              Его лирика про жизнь черных сообществ, травму, религию, депрессию
+              и славу. Её честность и исповедальность притягивает.
+            </p>
+            <p>
+              Он комбинирует западное побережье (West Coast), джаз-рэп, соул и
+              фанк с социальным, политическим и личным стори-теллингом.
+            </p>
+          </div>
+          <img src="./images/cards/album.png" alt="" />
         </div>
-    </div>
-    </div>
-</body>
+      </article>
+    </main>
+
+    <footer></footer>
+  </body>
 </html>

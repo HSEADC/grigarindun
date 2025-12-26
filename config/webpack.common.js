@@ -36,10 +36,17 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-        test: /\.(png|svg|jpeg|jpg|webp|gef)/,
+        test: /\.(png|svg|jpeg|jpg|webp|gif)/,
         type: 'asset/resource',
         generator: {
           filename: 'images/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mov)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'videos/[hash][ext][query]'
         }
       },
       {
